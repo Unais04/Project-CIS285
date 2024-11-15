@@ -9,10 +9,6 @@ body {
     min-height: 100vh;
 }
 
-main {
-    flex: 1;
-}
-
 header {
     background-color: #00796b;
     color: white;
@@ -28,6 +24,8 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
@@ -38,6 +36,42 @@ header {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #00796b;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; 
+    }
 }
 
 .hero {
